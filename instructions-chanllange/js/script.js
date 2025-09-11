@@ -27,6 +27,11 @@ ellipse(500,0,400,400);
 fill(0,128,255)
 triangle(0, 600, 600, 600, 250, 300);
 
-fill(0,0,0)
+fill(64,64,64)
 arc(50, 50, 80, 80, 0, PI + QUARTER_PI);
+arc(100, 150, 80, 80, 0, PI + QUARTER_PI);
+arc(200, 50, 80, 80, 0, PI + QUARTER_PI);
+
+fill(255,255,255);
+rectangle(250,300,30,50);
 }
