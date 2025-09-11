@@ -13,7 +13,7 @@
 */
 function setup() {
     createCanvas(600,600)
-    background("black");
+    background(0,51,102);
 }
 
 
@@ -22,8 +22,8 @@ function setup() {
 */
 function draw() {
 ellipse(300,0,400,400);
-fill("white");
+fill(224,224,224);
 
-triangle(300, 75, 58, 20, 86, 75);
+triangle(0, 600, 600, 600, 250, 300);
 fill("white");
 }
