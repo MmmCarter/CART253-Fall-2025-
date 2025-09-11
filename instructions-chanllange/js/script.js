@@ -12,7 +12,8 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
-    createCanvas(400,400)
+    createCanvas(600,600)
+    background("black");
 }
 
 
@@ -20,5 +21,9 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+ellipse(300,0,400,400);
+fill("white");
 
+triangle(300, 75, 58, 20, 86, 75);
+fill("white");
 }
