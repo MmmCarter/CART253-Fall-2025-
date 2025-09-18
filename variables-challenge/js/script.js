@@ -29,28 +29,11 @@ let sky = {
 // The bird which Mr. Furious hates
 let bird = {
     // Position
-    x: 50,
-    y: 50,
+    x: 30,
+    y: 30,
     // Dimensions
     size: 50,
-    // color
-    fill: yellow,
-    velocity: {
-        x: 0,
-        y: 0,
-    },
-    minVelocity: {
-        x: -3,
-        y: -2,
-    },
-    maxvelocity: {
-        x: 3,
-        y: 2,
-    },
-    acceleration: {
-        x: 0.025,
-        y: -0.05
-    }
+ 
 };
 /**
  * Create the canvas
@@ -75,23 +58,16 @@ function draw() {
 
   background(sky.r, sky.g, sky.b);
   
-  bird.velocity.x = bird.velocity.x + bird.acceleration.x;
-    bird.velocity.y = bird.velocity.y + bird.acceleration.y;
-    
-    // NEW! Constrain the bird's velocity
-    bird.velocity.x = constrain(bird.velocity.x, bird.minVelocity.x, bird.maxVelocity.x);
-    bird.velocity.y = constrain(bird.velocity.y, bird.minVelocity.y, bird.maxVelocity.y);
-    
-    // Move the bird by adding its velocity in x and y
-    bird.x = bird.x + bird.velocity.x;
-    bird.y = bird.y + bird.velocity.y;
     
   // Draw Mr. Furious as a coloured circle
   push();
   noStroke();
   fill(mrFurious.fill.r, mrFurious.fill.g, mrFurious.fill.b);
   ellipse(mrFurious.x, mrFurious.y, mrFurious.size);
-  
+
+  // Draw the bird as a yellow circle
+  fill(255, 255, 0);
+  ellipse(bird.x, bird.y, bird.size);
   pop();
 
 }
