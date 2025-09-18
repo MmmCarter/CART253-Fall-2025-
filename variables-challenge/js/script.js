@@ -17,7 +17,7 @@ let mrFurious = {
   fill: {
     r: 255,
     g: 225,
-    b: 225
+    b: 225,
   }
 };
 
@@ -32,6 +32,14 @@ function setup() {
  * Draw (and update) Mr. Furious
  */
 function draw() {
+    // Color changing over time
+    mrFurious.fill.g += random(-0.1,-0.3);
+    mrFurious.fill.b += random(-0.1,-0.3);
+
+
+
+
+
   background(160, 180, 200);
   
   // Draw Mr. Furious as a coloured circle
