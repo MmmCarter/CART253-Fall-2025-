@@ -36,8 +36,12 @@ let bird = {
     velocity: {
       x: 20,
       y: 2,
-    }
- 
+    },
+    acceleration: {
+      x: 0.025,
+      y: -0.05,
+    },
+
 };
 /**
  * Create the canvas
@@ -51,15 +55,18 @@ function setup() {
  */
 function draw() {
     // Color changing over time for Mr. Furious
-    mrFurious.fill.g += random(-0.1,-0.3);
-    mrFurious.fill.b += random(-0.1,-0.3);
+    mrFurious.fill.g += random(-0.5,-0.6);
+    mrFurious.fill.b += random(-0.5,-0.6);
 
     // Color changing over time for the sky
-    sky.r += random(-0.1,-0.3);
-    sky.g += random(-0.1,-0.3);
-    sky.b += random(-0.1,-0.3);
+    sky.r += random(-0.5,-0.6);
+    sky.g += random(-0.5,-0.6);
+    sky.b += random(-0.5,-0.6);
 
     //Bird movement
+    bird.velocity.x = bird.velocity.x + bird.acceleration.x;
+    bird.velocity.y = bird.velocity.y + bird.acceleration.y;
+
     bird.x = bird.x + bird.velocity.x;
     bird.y = bird.y + bird.velocity.y;
 
