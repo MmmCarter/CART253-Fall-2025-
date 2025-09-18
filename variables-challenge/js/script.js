@@ -55,6 +55,9 @@ function draw() {
     sky.g += random(-0.1,-0.3);
     sky.b += random(-0.1,-0.3);
 
+    //Bird movement
+    bird.x = bird.x + random(1,4);
+    bird.y = bird.y + random(-2,4);
 
   background(sky.r, sky.g, sky.b);
   
