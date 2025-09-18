@@ -21,9 +21,11 @@ let mrFurious = {
   }
 };
 // Color variables for the sky
-let skyred = 160;
-let skygreen = 180;
-let skyblue = 200;
+let sky = {
+    r:160,
+    g:180,
+    b:200,
+};
 
 /**
  * Create the canvas
@@ -41,11 +43,11 @@ function draw() {
     mrFurious.fill.b += random(-0.1,-0.3);
 
     // Color changing over time
-    skyred += random(-0.1,-0.3);
-    skygreen += random(-0.1,-0.3);
-    skyblue += random(-0.1,-0.3);
+    sky.r += random(-0.1,-0.3);
+    sky.g += random(-0.1,-0.3);
+    sky.b += random(-0.1,-0.3);
 
-  background(skyred, skygreen, skyblue);
+  background(sky.r, sky.g, sky.b);
   
   // Draw Mr. Furious as a coloured circle
   push();
