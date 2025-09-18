@@ -33,6 +33,10 @@ let bird = {
     y: 30,
     // Dimensions
     size: 50,
+    velocity: {
+      x: 20,
+      y: 2,
+    }
  
 };
 /**
@@ -56,8 +60,9 @@ function draw() {
     sky.b += random(-0.1,-0.3);
 
     //Bird movement
-    bird.x = bird.x + random(1,4);
-    bird.y = bird.y + random(-2,4);
+    bird.x = bird.x + bird.velocity.x;
+    bird.y = bird.y + bird.velocity.y;
+
 
   background(sky.r, sky.g, sky.b);
   
@@ -66,7 +71,7 @@ function draw() {
   push();
   noStroke();
   fill(mrFurious.fill.r, mrFurious.fill.g, mrFurious.fill.b);
-  ellipse(mrFurious.x, mrFurious.y, mrFurious.size);
+  ellipse(mrFurious.x + random(-10,10), mrFurious.y, mrFurious.size);
 
   // Draw the bird as a yellow circle
   fill(255, 255, 0);
