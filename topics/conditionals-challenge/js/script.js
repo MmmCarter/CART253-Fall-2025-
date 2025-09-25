@@ -35,6 +35,30 @@ function draw() {
   
   // Move user circle
   moveUser();
+
+  // Check for overlap
+
+  //Calculate distance between cireles centres
+  const d = dist(user.x,user.y,puck.x,puck.y);
+  const overlap = (d < user.size/2 + puck.size/2);
+  if (overlap) {
+    if (user.x > puck.x) {
+        puck.x -= 1;
+    }
+    if (user.x < puck.x) {
+        puck.x += 1;
+    }
+    if (user.y > puck.y) {
+        puck.y -= 1;
+    }
+    if (user.y < puck.y) {
+        puck.y += 1;
+    }
+
+  }
+  else {
+    puck.fill = "#ff0000";
+  }
   
   // Draw the user and puck
   drawUser();
