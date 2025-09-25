@@ -1,6 +1,6 @@
 /**
  * Circle Master
- * Pippin Barr
+ * Haolei Ma and Jason Lee
  *
  * This will be a program in which the user can push a circle
  * on the canvas using their own circle.
