@@ -62,6 +62,33 @@ function drawEyes() {
     noStroke();
     ellipse(185, 345, 5, 5);
     ellipse(305, 345, 5, 5);
+}
 
+/**
+ * Draw the mouth
+ */
+function drawMouth() {
+    noFill();
+    stroke(200, 50, 50);
+    strokeWeight(2);
+    arc(240, 450, 60, 20, 0, PI);
+}
 
+/**
+ * Draw the hair
+ */
+function drawHair() {
+    fill(50, 30, 10);
+    noStroke();
+    beginShape();
+    vertex(125, 150);
+    vertex(275, 150);
+    vertex(260, 100);
+    vertex(240, 120);
+    vertex(220, 80);
+    vertex(200, 120);
+    vertex(180, 80);
+    vertex(160, 120);
+    vertex(140, 100);
+    endShape(CLOSE);
 }
