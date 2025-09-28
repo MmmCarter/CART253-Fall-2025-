@@ -49,19 +49,19 @@ function drawEyes() {
     fill(255);
     stroke(0);
     strokeWeight(1);
-    ellipse(180, 350, 40, 20); // Left
-    ellipse(300, 350, 40, 20); // Right
+    ellipse(180, 360, 50, 25); // Left
+    ellipse(300, 360, 50, 25); // Right
 
     //pupils
     fill(50, 30, 20);
-    ellipse(180, 350, 15, 15);
-    ellipse(300, 350, 15, 15);
+    ellipse(180, 360, 20, 20);
+    ellipse(300, 360, 20, 20);
 
     // details
     fill(255);
     noStroke();
-    ellipse(185, 345, 5, 5);
-    ellipse(305, 345, 5, 5);
+    ellipse(183, 355, 8, 8);
+    ellipse(303, 355, 8, 8);
 }
 
 /**
@@ -71,7 +71,7 @@ function drawMouth() {
     noFill();
     stroke(200, 50, 50);
     strokeWeight(2);
-    arc(240, 450, 60, 20, 0, PI);
+    arc(240, 470, 100, 30, 0, PI);
 }
 
 /**
@@ -81,14 +81,14 @@ function drawHair() {
     fill(50, 30, 10);
     noStroke();
     beginShape();
-    vertex(125, 150);
-    vertex(275, 150);
-    vertex(260, 100);
-    vertex(240, 120);
-    vertex(220, 80);
-    vertex(200, 120);
-    vertex(180, 80);
-    vertex(160, 120);
-    vertex(140, 100);
+    vertex(116, 290);
+    vertex(364, 290);
+    vertex(335, 185);
+    vertex(295, 205);
+    vertex(265, 180);
+    vertex(235, 205);
+    vertex(195, 180);
+    vertex(175, 205);
+    vertex(130, 185);
     endShape(CLOSE);
 }
