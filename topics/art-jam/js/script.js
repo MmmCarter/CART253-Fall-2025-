@@ -78,7 +78,7 @@ function drawFace() {
  * Draw the eyes
  */
 function drawEyes() {
-    //eyes whites
+    //eyes whites (when hand touches, change color randomly)
     stroke(0);
     strokeWeight(1);
     if (eyeTouched) {
@@ -89,7 +89,7 @@ function drawEyes() {
     ellipse(FACE_X - 60, FACE_Y - 20, EYEWHITE_SIZE, 30);
     ellipse(FACE_X + 60, FACE_Y - 20, EYEWHITE_SIZE, 30);
 
-    //pupils
+    //pupils (when hand touches, change color randomly)
     if (eyeTouched) {
         fill(random(255), random(255), random(255));
     } else {
@@ -113,7 +113,11 @@ function drawMouth() {
     noFill();
     stroke(200, 50, 50);
     strokeWeight(2);
-    arc(240, 470, 100, 30, 0, PI);
+    if (eyeTouched) {
+        arc(240, 480, 120, 50, 0, PI, CHORD);
+    } else {
+        arc(240, 470, 100, 30, 0, PI);
+    }
 }
 
 /**
