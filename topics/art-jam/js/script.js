@@ -114,9 +114,9 @@ function drawMouth() {
     stroke(200, 50, 50);
     strokeWeight(2);
     if (eyeTouched) {
-        arc(240, 480, 120, 50, 0, PI, CHORD);
+        arc(240, 480, 120, 50, 0, PI, CHORD); // Open mouth and laugh when hand touched
     } else {
-        arc(240, 470, 100, 30, 0, PI);
+        arc(240, 470, 100, 30, 0, PI); // Smile
     }
 }
 
