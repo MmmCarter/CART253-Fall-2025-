@@ -8,10 +8,12 @@
 
 "use strict";
 
-//position of the movavle hand
+//Position of the movavle hand
 let handX, handY;
-//whether the eye is touched
+//Whether the eye is touched
 let eyeTouched = false;
+//Variables for hair flash effect
+let hairFlash = 0;
 
 //position of the face
 const FACE_X = 240;
@@ -62,7 +64,12 @@ function draw() {
         eyeTouched = false;
     }
 
-
+    //Hair flash effect
+    if (eyeTouched) {
+        hairFlash = sin(frameCount * 0.3) * 50;
+    } else {
+        hairFlash = 0;
+    }
 }
 
 /**
@@ -124,19 +131,36 @@ function drawMouth() {
  * Draw the hair
  */
 function drawHair() {
-    fill(50, 30, 10);
     noStroke();
-    beginShape();
-    vertex(116, 290);
-    vertex(364, 290);
-    vertex(335, 185);
-    vertex(295, 205);
-    vertex(265, 180);
-    vertex(235, 205);
-    vertex(195, 180);
-    vertex(175, 205);
-    vertex(130, 185);
-    endShape(CLOSE);
+    if (eyeTouched) {
+        // Hair turn into super saiyan style when hand touches the eyes
+        fill(255, 215 + hairFlash, 0);
+        beginShape();
+        vertex(116, 290);
+        vertex(364, 290);
+        vertex(335, 185);
+        vertex(295, 205);
+        vertex(265, 180);
+        vertex(235, 205);
+        vertex(195, 180);
+        vertex(175, 205);
+        vertex(130, 185);
+        endShape(CLOSE);
+    } else {
+        // Normal hair
+        fill(50, 30, 10);
+        beginShape();
+        vertex(116, 290);
+        vertex(364, 290);
+        vertex(335, 185);
+        vertex(295, 205);
+        vertex(265, 180);
+        vertex(235, 205);
+        vertex(195, 180);
+        vertex(175, 205);
+        vertex(130, 185);
+        endShape(CLOSE);
+    }
 }
 
 /**
