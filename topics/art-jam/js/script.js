@@ -7,6 +7,8 @@
  */
 
 "use strict";
+//position of the movavle hand
+let handX, handY;
 
 /**
  * Creates the canvas
@@ -14,6 +16,8 @@
 function setup() {
     // Creates a 480x640 canvas (suitable for mobile as well)
     createCanvas(480, 640);
+    handX = width / 2;
+    handY = height / 2;
 
 }
 
@@ -32,6 +36,13 @@ function draw() {
     drawEyebrows();
     drawNose();
     drawEars();
+
+    // Draw the movable hand
+    drawHand();
+
+    //hand controlled by mouse
+    handX = mouseX;
+    handY = mouseY;
 
 }
 
@@ -130,4 +141,13 @@ function drawEars() {
     strokeWeight(1.5);
     ellipse(90, 380, 40, 60); // Left
     ellipse(390, 380, 40, 60); // Right
+}
+
+/**
+ * Draw the movable hand
+ */
+function drawHand() {
+    fill(255, 224, 189);
+    noStroke();
+    ellipse(handX, handY, 60, 80);
 }
