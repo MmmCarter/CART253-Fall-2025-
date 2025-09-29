@@ -1,6 +1,6 @@
 /**
  * Title of Project
- * Author Name
+ * Haolei Ma
  * 
  * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
  * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
@@ -9,6 +9,15 @@
 "use strict";
 //position of the movavle hand
 let handX, handY;
+
+//position of the face
+const FACE_X = 240;
+const FACE_Y = 380;
+//eye sizes
+const EYEWHITE_SIZE = (50, 30);
+const PUPIL_SIZE = (20, 20);
+const DETAIL_SIZE = (8, 8);
+
 
 /**
  * Creates the canvas
@@ -52,7 +61,7 @@ function draw() {
 function drawFace() {
     fill(255, 200, 160);
     noStroke();
-    ellipse(240, 380, 290, 350);
+    ellipse(FACE_X, FACE_Y, 290, 350);
 }
 
 /**
@@ -63,19 +72,19 @@ function drawEyes() {
     fill(255);
     stroke(0);
     strokeWeight(1);
-    ellipse(180, 360, 50, 25); // Left
-    ellipse(300, 360, 50, 25); // Right
+    ellipse(180, 360, EYEWHITE_SIZE); // Left
+    ellipse(300, 360, EYEWHITE_SIZE); // Right
 
     //pupils
     fill(50, 30, 20);
-    ellipse(180, 360, 20, 20);
-    ellipse(300, 360, 20, 20);
+    ellipse(180, 360, PUPIL_SIZE); // Left
+    ellipse(300, 360, PUPIL_SIZE); // Right
 
     // details
     fill(255);
     noStroke();
-    ellipse(183, 355, 8, 8);
-    ellipse(303, 355, 8, 8);
+    ellipse(183, 355, DETAIL_SIZE); // Left
+    ellipse(303, 355, DETAIL_SIZE); // Right
 }
 
 /**
