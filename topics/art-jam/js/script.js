@@ -29,6 +29,9 @@ function draw() {
     drawEyes();
     drawMouth();
     drawHair();
+    drawEyebrows();
+    drawNose();
+    drawEars();
 
 }
 
@@ -91,4 +94,40 @@ function drawHair() {
     vertex(175, 205);
     vertex(130, 185);
     endShape(CLOSE);
+}
+
+/**
+ * Draw the eyebrows
+ */
+function drawEyebrows() {
+    stroke(50, 30, 10);
+    strokeWeight(6);
+    noFill();
+    line(155, 335, 205, 340);
+    line(275, 340, 325, 335);
+}
+
+/**
+ * Draw the nose
+ */
+function drawNose() {
+    noFill();
+    stroke(150, 100, 80);
+    strokeWeight(2);
+    beginShape();
+    vertex(240, 370);
+    vertex(230, 400);
+    vertex(240, 410);
+    endShape();
+}
+
+/**
+ * Draw the ears
+ */
+function drawEars() {
+    fill(255, 220, 190);
+    stroke(200, 180, 160);
+    strokeWeight(1.5);
+    ellipse(90, 380, 40, 60); // Left
+    ellipse(390, 380, 40, 60); // Right
 }
