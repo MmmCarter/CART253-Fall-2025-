@@ -7,17 +7,18 @@
  */
 
 "use strict";
+
 //position of the movavle hand
 let handX, handY;
+//whether the eye is touched
+let eyeTouched = false;
 
 //position of the face
 const FACE_X = 240;
 const FACE_Y = 380;
 //eye sizes
-const EYEWHITE_SIZE = (50, 30);
-const PUPIL_SIZE = (20, 20);
-const DETAIL_SIZE = (8, 8);
-
+const EYEWHITE_SIZE = 50;
+const PUPIL_SIZE = 20;
 
 /**
  * Creates the canvas
@@ -32,7 +33,7 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Draws Haolei's self-portrait
  */
 function draw() {
     background(220);
@@ -53,6 +54,15 @@ function draw() {
     handX = mouseX;
     handY = mouseY;
 
+    //Determine whwther the hand is touching the eyes
+    if (dist(handX, handY, FACE_X - 60, FACE_Y - 20) < EYEWHITE_SIZE / 2 || // Left eye
+        dist(handX, handY, FACE_X + 60, FACE_Y - 20) < EYEWHITE_SIZE / 2) { // Right eye
+        eyeTouched = true;
+    } else {
+        eyeTouched = false;
+    }
+
+
 }
 
 /**
@@ -68,23 +78,32 @@ function drawFace() {
  * Draw the eyes
  */
 function drawEyes() {
-    //eyes white
-    fill(255);
+    //eyes whites
     stroke(0);
     strokeWeight(1);
-    ellipse(180, 360, EYEWHITE_SIZE); // Left
-    ellipse(300, 360, EYEWHITE_SIZE); // Right
+    if (eyeTouched) {
+        fill(random(255), random(255), random(255));
+    } else {
+        fill(255);
+    }
+    ellipse(FACE_X - 60, FACE_Y - 20, EYEWHITE_SIZE, 30);
+    ellipse(FACE_X + 60, FACE_Y - 20, EYEWHITE_SIZE, 30);
 
     //pupils
-    fill(50, 30, 20);
-    ellipse(180, 360, PUPIL_SIZE); // Left
-    ellipse(300, 360, PUPIL_SIZE); // Right
+    if (eyeTouched) {
+        fill(random(255), random(255), random(255));
+    } else {
+        fill(50, 30, 20);
+    }
+    ellipse(FACE_X - 60, FACE_Y - 20, PUPIL_SIZE, 20);
+    ellipse(FACE_X + 60, FACE_Y - 20, PUPIL_SIZE, 20);
 
     // details
     fill(255);
     noStroke();
-    ellipse(183, 355, DETAIL_SIZE); // Left
-    ellipse(303, 355, DETAIL_SIZE); // Right
+    ellipse(183, 355, 8, 8); // Left
+    ellipse(303, 355, 8, 8); // Right
+
 }
 
 /**
