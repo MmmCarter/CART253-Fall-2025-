@@ -1,5 +1,5 @@
 /**
- * Title of Project
+ * Super Saiyan Self-Portrait (Art-Jam Assignment)
  * Haolei Ma
  * 
  * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
@@ -8,7 +8,7 @@
 
 "use strict";
 
-//Position of the movavle hand
+//Position of the movable hand
 let handX, handY;
 //Whether the eye is touched
 let eyeTouched = false;

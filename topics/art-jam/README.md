@@ -1,6 +1,6 @@
-# TITLE OF PROJECT
+# Super Saiyan Self-Portrait
 
-AUTHOR NAME
+Haolei Ma
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
