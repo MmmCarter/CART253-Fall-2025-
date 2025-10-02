@@ -69,10 +69,16 @@ function mouseClicked() {
     lose();
 }
 
+function mouseMoved() {
+    lose();
+}
+
 function lose() {
     if (keyPressed) {
         gameOver = true;
     } else if (mouseClicked) {
+        gameOver = true;
+    } else if (mouseMoved) {
         gameOver = true;
     } else {
         gameOver = false;
