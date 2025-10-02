@@ -6,9 +6,11 @@
  * 
  * The self-portrait will be generated the center of the canvas, please take a moment to admire his captivating face.
  * 
- * There is a movable hand that follows your mouse, try to move the hand to touch the eyes of the face (Haolei loves palying with eyes).
+ * There is a movable hand that follows your mouse, press mouse anywhere you want to charging energy for Haolei.
  * 
+ * Then try to move the hand to touch the eyes to see if the face is more captivating now.
  * 
+ * Press the mouse at the same time while touching the eyes, is it more and more captivating now?
  */
 
 "use strict";
