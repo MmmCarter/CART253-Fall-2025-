@@ -22,8 +22,8 @@ let hairFlash = 0;
 //Variables for charging
 let charging = false;
 let chargeGlow = 0;
-let shakeOffsetX = 0;
-let shakeOffsetY = 0;
+let shakeX = 0;
+let shakeY = 0;
 
 //position of the face
 const FACE_X = 240;
@@ -43,14 +43,31 @@ function setup() {
 
 }
 
-
 /**
  * Draws Haolei's self-portrait
  */
 function draw() {
     background(220);
 
+    //Charging and shaking when mouse is pressed
+    if (charging) {
+        chargeGlow = 100 + sin(frameCount * 0.5) * 50;
+
+        //random shaking
+        shakeX = random(-3, 3);
+        shakeY = random(-3, 3);
+
+        //Aura generates for charging
+        drawAura();
+    } else {
+        chargeGlow = 0;
+        shakeX = 0;
+        shakeY = 0;
+    }
+
     // Draw the self-portrait
+    push();
+    translate(shakeX, shakeY);
     drawFace();
     drawEyes();
     drawMouth();
@@ -58,6 +75,7 @@ function draw() {
     drawEyebrows();
     drawNose();
     drawEars();
+    pop();
 
     // Draw the movable hand
     drawHand();
@@ -79,6 +97,29 @@ function draw() {
         hairFlash = sin(frameCount * 0.3) * 50;
     } else {
         hairFlash = 0;
+    }
+}
+
+/**
+ * Charging start if mouse pressed
+ */
+function mousePressed() {
+    charging = true;
+}
+
+/**
+ * Charging stop if mouse released
+ */
+function mouseReleased() {
+    charging = false;
+}
+
+function drawAura() {
+    noStroke();
+    for (let r = 350; r > 100; r -= 40) {
+        let alpha = map(r, 100, 350, 180, 0);
+        fill(255, 255, 0, alpha);
+        ellipse(FACE_X, FACE_Y, r + chargeGlow, r + chargeGlow);
     }
 }
 
