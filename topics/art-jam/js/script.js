@@ -2,8 +2,13 @@
  * Super Saiyan Self-Portrait (Art-Jam Assignment)
  * Haolei Ma
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * This is an interactive self-portrait where a hand follows the mouse cursor.
+ * 
+ * The self-portrait will be generated the center of the canvas, please take a moment to admire his captivating face.
+ * 
+ * There is a movable hand that follows your mouse, try to move the hand to touch the eyes of the face (Haolei loves palying with eyes).
+ * 
+ * 
  */
 
 "use strict";
@@ -14,6 +19,11 @@ let handX, handY;
 let eyeTouched = false;
 //Variables for hair flash effect
 let hairFlash = 0;
+//Variables for charging
+let charging = false;
+let chargeGlow = 0;
+let shakeOffsetX = 0;
+let shakeOffsetY = 0;
 
 //position of the face
 const FACE_X = 240;
