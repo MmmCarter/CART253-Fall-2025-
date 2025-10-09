@@ -30,16 +30,16 @@
 
 15. Two-player mode (Configure different key bindings to allow two players to play simultaneously.)
 
-16. 
+16. Competition Mode (Compete with your friends to see who can reach 100 points first？)
 
-17. 
+17. Evolution (After eating certain numbers of flies, frogs will evolve, and his abilities will change.)
 
-18. 
+18. Limit-time mode (Can you score 50 points in 30 seconds?)
 
-19. 
+19. Role reversal (You will control the fly but there are four frogs swarming around you)
 
-20. 
+20. Disturbance (Flies also release certain abilities to try to distract frogs.)
 
-21. 
+21. Model Enhancement (Make the frog and fly look more detailed?)
 
-22. 
+22. Title page Enhancement (Make the start screen more polished, more like a truly released game.)
