@@ -10,13 +10,20 @@
 
 5. Penalty Mechanism (Deduct 2 points for missing three attacks in a row.(Can be interact with anger mode maybe?))
 
-6. 
-7. 
-8. 
-9. 
-10. 
+6. Health System (The flies were furious and decide to fight back. Stop them before they come at you.(Lose health when being hit by a fly))
+
+7. Ability (Give the frog some cool spells to make him eating more enjoyable? Spells will have CDs)
+
+8. Fly spawning location (No longer appearing only from the left; it can appear from any position on the screen.)
+
+9. Fly moving path (Moves up and down instead of only flying straight)
+
+10. Fly moving speed (Fly's moving speed is not stable, sometimes fast, sometimes slow)
+
 11. 
+
 12. 
+
 13. 
 14. 
 15. 
