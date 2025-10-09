@@ -20,17 +20,26 @@
 
 10. Fly moving speed (Fly's moving speed is not stable, sometimes fast, sometimes slow)
 
-11. 
+11. Please avoid friendly fire (Some butterflies may appear mixed in with the flies, don't hurt them! Lose 10 points if you hit them)
 
-12. 
+12. Winning Goals (100 points to win the game)
 
-13. 
-14. 
-15. 
+13. Annoying sound effects (If you fail to hit, flies will laugh at you.)
+
+14. Victory Effect (Play some upbeat music and put sunglasses on the frog)
+
+15. Two-player mode (Configure different key bindings to allow two players to play simultaneously.)
+
 16. 
+
 17. 
+
 18. 
+
 19. 
+
 20. 
+
 21. 
+
 22. 
