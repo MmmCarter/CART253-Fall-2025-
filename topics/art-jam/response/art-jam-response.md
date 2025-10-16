@@ -8,7 +8,7 @@ From the moment I first saw it, I was immediately drawn to the eye—even withou
 
 In the code, the facial construction avoids complex composite graphic combinations, achieving a remarkably polished effect through simple shapes and parameters. Every functions and variables is very clear and well organized. The eye blinking function (line 78 - 83) is undoubtedly the soul of this work. 
 
-Overall, this is a creative and distinctive interactive piece. I absolutely love this free-spirited and ever-changing form of expression.
+Overall, this is a creative and distinctive interactive piece. I absolutely love this free-spirited and ever-changing form of expression!
 
 ## Anthony Patient
 >https://a-potat0.github.io/Art-Jam/template-p5-project/
@@ -18,9 +18,14 @@ Upon opening this piece, I was immediately captivated by its mysteriously evocat
 
 In Anthony's code, he put numerous random variables to determine the colors of the eyelids, eyeballs, and background, using mousePressed () and mouseClicked () to make every operation delivers a unique visual shock. All parameters in draw () are all extremely detailed. The blinking of the eyelids adds realism to the work (line 194 - 198).
 
-I love this work so much that I've come up with some ideas for expanding it: If this eye could be paired with half a face, maybe it will become an more fantastical work.
+I love this work so much that I've come up with some ideas for expanding it: If this eye could be paired with half a face, maybe it will become an more fantastical work!
 
 ## Camelia Pitsilis
 >https://cameliapitsilis-lgtm.github.io/cart253/art-jam
 >https://github.com/cameliapitsilis-lgtm/cart253/tree/main/art-jam
 
+I really love the style of Camelia’s work! This pixel art style reminds me of the characters in Stardew Valley. Especially mousePressed () to put on or take off earring and necklace. The overall details of the figure are exceptionally clear, as if a selfie had been pixelated. The moveable eyes makes it appear more lifelike.
+
+In her code she used rect () exclusively in her facial drawing to achieve the pixel art style. Also the use of color is exceptionally masterful, employing varying shades of the same hue to create shadow effects that render the portrait more detailed and vivid. Functions for eyes’ movement and adornment of jewelry enhance its visual appeal and enjoyment.
+
+This is a truly perfect piece of artwork, one that I believe best captures the essence of a self-portrait. Very great job!
