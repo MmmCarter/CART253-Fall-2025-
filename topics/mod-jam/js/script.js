@@ -63,16 +63,132 @@ function setup() {
 
     // Give the fly its first random position
     resetFly();
+
+    // Initialize title screen
+    initializeTitleScreen();
+
+    // Create UI buttons
+    createButtons();
 }
 
 function draw() {
     background("#87ceeb");
+
+    if (gameState === "title") {
+        drawTitleScreen();
+    } else if (gameState === "instructions") {
+        drawInstructionsScreen();
+    } else if (gameState === "game") {
+        drawGame();
+    }
+}
+
+function drawGame() {
     moveFly();
     drawFly();
     moveFrog();
     moveTongue();
     drawFrog();
     checkTongueFlyOverlap();
+}
+
+/**
+ * Initializes title screen elements
+ */
+function initializeTitleScreen() {
+    // Create decorative flies for title screen
+    for (let i = 0; i < 6; i++) {
+        titleFlies.push({
+            x: random(width),
+            y: random(100, 200),
+            size: random(8, 15),
+            speedX: random(-1, 1),
+            speedY: random(-0.5, 0.5),
+            wingAngle: random(TWO_PI)
+        });
+    }
+}
+
+/**
+ * Create UI buttons
+ */
+function createButtons() {
+    buttons = [
+        {
+            x: width / 2,
+            y: height / 2 + 40,
+            width: 200,
+            height: 50,
+            text: "Start",
+            state: "title"
+        },
+        {
+            x: width / 2,
+            y: height / 2 + 100,
+            width: 200,
+            height: 50,
+            text: "Instructions",
+            state: "title"
+        },
+    ];
+}
+
+/**
+ * Draw the title screen
+ */
+function drawTitleScreen() {
+    // Draw background with gradient effect
+    drawTitleBackground();
+
+    // Update title animation
+    titleAnimationTime += 0.05;
+
+    // Draw decorative elements
+    drawTitleDecorations();
+
+    // Draw title
+    drawTitleText();
+
+    // Draw buttons
+    drawButtons();
+}
+
+/**
+ * Draw title screen background
+ */
+function drawTitleBackground() {
+    //sky gradient
+    for (let y = 0; y < height; y++) {
+        let blue = map(y, 0, height, 200, 135);
+        stroke(135, 206, blue);
+        line(0, y, width, y);
+    }
+
+    //Draw clouds
+    drawClouds();
+
+    //Draw pond
+    fill(30, 144, 255, 150);
+    noStroke();
+    Rect(0, height - 100, width, 100);
+}
+
+/**
+ * Draw clouds on title screen
+ */
+function drawClouds() {
+    fill(255);
+    noStroke();
+
+    //Cloud 1
+    ellipse(100 + sin(titleAnimationTime) * 10, 80, 60, 40);
+    ellipse(130 + sin(titleAnimationTime) * 10, 70, 70, 50);
+    ellipse(160 + sin(titleAnimationTime) * 10, 85, 50, 35);
+
+    //Cloud 2
+    ellipse(500 + cos(titleAnimationTime * 0.8) * 15, 120, 70, 45);
+    ellipse(530 + cos(titleAnimationTime * 0.8) * 15, 110, 80, 55);
+    ellipse(560 + cos(titleAnimationTime * 0.8) * 15, 125, 60, 40);
 }
 
 /**
