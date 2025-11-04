@@ -1,19 +1,11 @@
 /**
  * Frogfrogfrog
- * Pippin Barr
- * 
- * A game of catching flies with your frog-tongue
- * 
- * Instructions:
- * - Move the frog with your mouse
- * - Click to launch the tongue
- * - Catch flies
- * 
- * Made with p5
- * https://p5js.org/
  */
 
 "use strict";
+
+// Game states
+let gameState = "title"; // title, instructions, game
 
 // Our frog
 const frog = {
@@ -42,6 +34,26 @@ const fly = {
     size: 10,
     speed: 3
 };
+
+// Title screen elements
+let titleFlies = [];
+let titleFrog = {
+    x: 320,
+    y: 300,
+    size: 120,
+    tongue: {
+        x: 320,
+        y: 300,
+        state: "idle",
+        progress: 0,
+        targetX: 0,
+        targetY: 0
+    }
+};
+
+// UI elements
+let buttons = [];
+let titleAnimationTime = 0;
 
 /**
  * Creates the canvas and initializes the fly
@@ -163,7 +175,7 @@ function checkTongueFlyOverlap() {
     // Get distance from tongue to fly
     const d = dist(frog.tongue.x, frog.tongue.y, fly.x, fly.y);
     // Check if it's an overlap
-    const eaten = (d < frog.tongue.size/2 + fly.size/2);
+    const eaten = (d < frog.tongue.size / 2 + fly.size / 2);
     if (eaten) {
         // Reset the fly
         resetFly();
