@@ -130,6 +130,14 @@ function createButtons() {
             text: "Instructions",
             state: "title"
         },
+        {
+            x: width / 2,
+            y: height - 60,
+            width: 200,
+            height: 50,
+            text: "Back",
+            state: "instructions"
+        }
     ];
 }
 
@@ -170,7 +178,7 @@ function drawTitleBackground() {
     //Draw pond
     fill(30, 144, 255, 150);
     noStroke();
-    Rect(0, height - 100, width, 100);
+    rect(0, height - 100, width, 100);
 }
 
 /**
@@ -305,6 +313,27 @@ function drawTitleFrog() {
 }
 
 /**
+ * Draw title text
+ */
+function drawTitleText() {
+    push();
+
+    // Main title
+    textAlign(CENTER, CENTER);
+    textSize(48);
+    fill(34, 139, 34);
+    textStyle(BOLD);
+    text("FrogFrogFrog", width / 2, 120);
+
+    // Subtitle
+    textSize(24);
+    fill(255);
+    text("Remastered Edition", width / 2, 170);
+
+    pop();
+}
+
+/**
  * Moves the fly according to its speed
  * Resets the fly if it gets all the way to the right
  */
@@ -414,10 +443,27 @@ function checkTongueFlyOverlap() {
 }
 
 /**
- * Launch the tongue on click (if it's not launched yet)
+ * Handle mouse clicks for UI and game interactions
  */
 function mousePressed() {
-    if (frog.tongue.state === "idle") {
-        frog.tongue.state = "outbound";
+    if (gameState === "title" || gameState === "instructions") {
+        // Check buttons
+        for (let button of buttons) {
+            if (button.state === gameState && isMouseOverButton(button)) {
+                if (button.text === "Start") {
+                    gameState = "game";
+                } else if (button.text === "Instructions") {
+                    gameState = "instructions";
+                } else if (button.text === "Back") {
+                    gameState = "title";
+                }
+                return;
+            }
+        }
+    } else if (gameState === "game") {
+        // Launch the tongue on click (if it's not launched yet)
+        if (frog.tongue.state === "idle") {
+            frog.tongue.state = "outbound";
+        }
     }
 }
