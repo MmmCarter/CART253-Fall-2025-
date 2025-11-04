@@ -299,12 +299,12 @@ function drawTitleFrog() {
         let tongueY = lerp(titleFrog.y, titleFrog.tongue.targetY, titleFrog.tongue.progress);
 
         // Tongue line
-        stroke(255, 105, 97);
+        stroke("#ff0000");
         strokeWeight(8);
         line(titleFrog.x, titleFrog.y, tongueX, tongueY);
 
         // Tongue tip
-        fill(255, 105, 97);
+        fill("#ff0000");
         noStroke();
         ellipse(tongueX, tongueY, 15);
     }
@@ -454,6 +454,12 @@ function drawFly() {
     noStroke();
     fill("#000000");
     ellipse(fly.x, fly.y, fly.size);
+
+    // Draw wings
+    fill(255, 200);
+    let wingSize = map(sin(frameCount * 0.2), -1, 1, fly.size * 0.3, fly.size * 0.6);
+    ellipse(fly.x - fly.size * 0.4, fly.y, wingSize, fly.size * 0.4);
+    ellipse(fly.x + fly.size * 0.4, fly.y, wingSize, fly.size * 0.4);
     pop();
 }
 
@@ -523,6 +529,14 @@ function drawFrog() {
     fill("#00ff00");
     noStroke();
     ellipse(frog.body.x, frog.body.y, frog.body.size);
+
+    // Draw the frog's eyes
+    fill(255);
+    ellipse(frog.body.x - 55, frog.body.y - 55, 25);
+    ellipse(frog.body.x + 55, frog.body.y - 55, 25);
+    fill(0);
+    ellipse(frog.body.x - 55, frog.body.y - 55, 12);
+    ellipse(frog.body.x + 55, frog.body.y - 55, 12);
     pop();
 }
 
