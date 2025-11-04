@@ -368,6 +368,72 @@ function isMouseOverButton(button) {
 }
 
 /**
+ * Draw instructions screen
+ */
+function drawInstructionsScreen() {
+    // Same background with title screen
+    drawTitleBackground();
+
+    // Instructions Title
+    push();
+    textAlign(CENTER, CENTER);
+    textSize(36);
+    fill(34, 139, 34);
+    textStyle(BOLD);
+    text("Instructions", width / 2, 60);
+    pop();
+
+    // Instructions content
+    drawInstructionsContent();
+
+    // Draw buttons
+    drawButtons();
+}
+
+/**
+ * Draw instructions content (Gaming rules)
+ */
+function drawInstructionsContent() {
+    push();
+    textAlign(LEFT);
+    textSize(16);
+    fill(255);
+    let instructions = [
+        "Game Objective:",
+        "Use the frog's tongue to catch as many flies as possible!",
+        "",
+        "Controls:",
+        "Move the frog horizontally by moving your mouse.",
+        "Click the mouse to launch the tongue.",
+        "",
+        "Game Tips:",
+        "Predict the flight path of the flies.",
+        "Launch the tongue when the flies are approaching.",
+        "Continuously catch to obtain a higher score."
+    ];
+
+    let startY = 100;
+    let lineHeight = 25;
+
+    for (let i = 0; i < instructions.length; i++) {
+        let y = startY + i * lineHeight;
+
+        if (instructions[i] === "") {
+            // Empty line for spacing
+            continue;
+        } else {
+            // Regular text
+            fill(0);
+            textSize(16);
+        }
+
+        text(instructions[i], 100, y);
+    }
+
+    pop();
+}
+
+/**
  * Moves the fly according to its speed
  * Resets the fly if it gets all the way to the right
  */
