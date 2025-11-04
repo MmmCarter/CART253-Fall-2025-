@@ -192,6 +192,119 @@ function drawClouds() {
 }
 
 /**
+ * Draw title screen decorations
+ */
+function drawTitleDecorations() {
+    // Update and draw title flies
+    updateTitleFlies();
+
+    // Draw title frog with animation
+    drawTitleFrog();
+}
+
+/**
+ * Update title screen flies
+ */
+function updateTitleFlies() {
+    for (let i = 0; i < titleFlies.length; i++) {
+        let tFly = titleFlies[i];
+
+        //Move fly
+        tFly.x += tFly.speedX;
+        tFly.y += tFly.speedY;
+        tFly.wingAngle += 0.3;
+
+        //Bounce off edges
+        if (tFly.x < 0 || tFly.x > width) tFly.speedX *= -1;
+        if (tFly.y < 100 || tFly.y > 250) tFly.speedY *= -1;
+
+        //Draw fly
+        drawTitleFly(tFly);
+    }
+}
+
+/**
+ * Draw flies for title screen
+ */
+function drawTitleFly(tFly) {
+    push();
+
+    // Body
+    fill(0);
+    noStroke();
+    ellipse(tFly.x, tFly.y, tFly.size);
+
+    // Wings
+    let wingSize = map(sin(tFly.wingAngle), -1, 1, tFly.size * 0.3, tFly.size * 0.8);
+    fill(255, 200);
+    ellipse(tFly.x - tFly.size * 0.3, tFly.y, wingSize, wingSize * 0.4);
+    ellipse(tFly.x + tFly.size * 0.3, tFly.y, wingSize, wingSize * 0.4);
+
+    pop();
+}
+
+/**
+ * Draw title frog
+ */
+function drawTitleFrog() {
+    push();
+
+    // Body
+    fill(50, 205, 50);
+    noStroke();
+    ellipse(titleFrog.x, titleFrog.y, titleFrog.size);
+
+    // Eyes
+    fill(255);
+    ellipse(titleFrog.x - 30, titleFrog.y - 30, 25);
+    ellipse(titleFrog.x + 30, titleFrog.y - 30, 25);
+    fill(0);
+    ellipse(titleFrog.x - 30, titleFrog.y - 30, 12);
+    ellipse(titleFrog.x + 30, titleFrog.y - 30, 12);
+
+    // Animate tongue occasionally
+    if (frameCount % 120 === 0 && titleFrog.tongue.state === "idle") {
+        titleFrog.tongue.state = "out";
+        titleFrog.tongue.progress = 0;
+        // Target a random fly
+        let targetFly = titleFlies[floor(random(titleFlies.length))];
+        titleFrog.tongue.targetX = targetFly.x;
+        titleFrog.tongue.targetY = targetFly.y;
+    }
+
+    // Handle tongue animation
+    if (titleFrog.tongue.state === "out") {
+        titleFrog.tongue.progress += 0.1;
+        if (titleFrog.tongue.progress >= 1) {
+            titleFrog.tongue.state = "back";
+        }
+    } else if (titleFrog.tongue.state === "back") {
+        titleFrog.tongue.progress -= 0.1;
+        if (titleFrog.tongue.progress <= 0) {
+            titleFrog.tongue.state = "idle";
+        }
+    }
+
+    // Draw tongue if active
+    if (titleFrog.tongue.state !== "idle") {
+        let tongueX = lerp(titleFrog.x, titleFrog.tongue.targetX, titleFrog.tongue.progress);
+        let tongueY = lerp(titleFrog.y, titleFrog.tongue.targetY, titleFrog.tongue.progress);
+
+        // Tongue line
+        stroke(255, 105, 97);
+        strokeWeight(8);
+        line(titleFrog.x, titleFrog.y, tongueX, tongueY);
+
+        // Tongue tip
+        fill(255, 105, 97);
+        noStroke();
+        ellipse(tongueX, tongueY, 15);
+    }
+
+    pop();
+}
+
+/**
  * Moves the fly according to its speed
  * Resets the fly if it gets all the way to the right
  */
