@@ -38,8 +38,8 @@ const fly = {
 // Title screen elements
 let titleFlies = [];
 let titleFrog = {
-    x: 320,
-    y: 300,
+    x: 580,
+    y: 360,
     size: 120,
     tongue: {
         x: 320,
@@ -331,6 +331,40 @@ function drawTitleText() {
     text("Remastered Edition", width / 2, 170);
 
     pop();
+}
+
+/**
+ * Draw UI buttons
+ */
+function drawButtons() {
+    for (let button of buttons) {
+        if (button.state !== gameState) continue;
+
+        let isHover = isMouseOverButton(button);
+
+        // Draw button background
+        fill(isHover ? [46, 125, 50] : [56, 142, 60]);
+        stroke(isHover ? [30, 100, 35] : [40, 120, 45]);
+        strokeWeight(2);
+        rect(button.x - button.width / 2, button.y - button.height / 2, button.width, button.height, 10);
+
+        // Button text
+        fill(255);
+        noStroke();
+        textAlign(CENTER, CENTER);
+        textSize(18);
+        text(button.text, button.x, button.y);
+    }
+}
+
+/**
+ * Checks if the mouse is over a button
+ */
+function isMouseOverButton(button) {
+    return mouseX > button.x - button.width / 2 &&
+        mouseX < button.x + button.width / 2 &&
+        mouseY > button.y - button.height / 2 &&
+        mouseY < button.y + button.height / 2;
 }
 
 /**
