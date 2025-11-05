@@ -14,6 +14,9 @@ let missCount = 0; // Count of misses
 let scoreBarmaxWidth = 200; // Maximum width of the score bar
 let tongueLaunched = false; //Make sure that a single missile launch is only counted as a hit or a miss once.
 
+// Winning condition
+const winningScore = 30;
+
 // Our frog
 const frog = {
     // The frog's body has a position and size
@@ -87,6 +90,8 @@ function draw() {
         drawInstructionsScreen();
     } else if (gameState === "game") {
         drawGame();
+    } else if (gameState === "win") {
+        drawWinScreen();
     }
 }
 
@@ -98,6 +103,11 @@ function drawGame() {
     drawFrog();
     checkTongueFlyOverlap();
     drawScoreBar();
+
+    // Check for winning condition
+    if (score >= winningScore) {
+        gameState = "win";
+    }
 }
 
 /**
@@ -145,6 +155,14 @@ function createButtons() {
             height: 50,
             text: "Back",
             state: "instructions"
+        },
+        {
+            x: width / 2,
+            y: height - 60,
+            width: 200,
+            height: 50,
+            text: "Play Again",
+            state: "win"
         }
     ];
 }
@@ -471,6 +489,42 @@ function drawScoreBar() {
 }
 
 /**
+ * Draws the win screen
+ */
+function drawWinScreen() {
+    background("#90ee90"); // background
+
+    push();
+    textAlign(CENTER, CENTER);
+    fill(34, 139, 34);
+    textSize(48);
+    textStyle(BOLD);
+    text("Victory!", width / 2, height / 2 - 60);
+
+    textSize(24);
+    fill(0);
+    text("Congratulations! You reached " + score + " points!", width / 2, height / 2);
+
+    pop();
+
+    // Draws replay button
+    drawButtons();
+}
+
+/**
+ * Reset the game
+ */
+function resetGame() {
+    score = 0;
+    comboCount = 0;
+    missCount = 0;
+    tongueLaunched = false;
+    frog.tongue.state = "idle";
+    frog.tongue.y = 480;
+    resetFly();
+}
+
+/**
  * Moves the fly according to its speed
  * Resets the fly if it gets all the way to the right
  */
@@ -625,27 +679,26 @@ function checkTongueFlyOverlap() {
  * Handle mouse clicks for UI and game interactions
  */
 function mousePressed() {
-    if (gameState === "title" || gameState === "instructions") {
-        // Check buttons
-        for (let button of buttons) {
-            if (button.state === gameState && isMouseOverButton(button)) {
-                if (button.text === "Start") {
-                    score = 0;
-                    comboCount = 0;
-                    missCount = 0;
-                    tongueLaunched = false;
-
-                    gameState = "game";
-                } else if (button.text === "Instructions") {
-                    gameState = "instructions";
-                } else if (button.text === "Back") {
-                    gameState = "title";
-                }
-                return;
+    // Check buttons
+    for (let button of buttons) {
+        if (button.state === gameState && isMouseOverButton(button)) {
+            if (button.text === "Start") {
+                resetGame();
+                gameState = "game";
+            } else if (button.text === "Instructions") {
+                gameState = "instructions";
+            } else if (button.text === "Back") {
+                gameState = "title";
+            } else if (button.text === "Play Again") {
+                resetGame();
+                gameState = "title";
             }
+            return;
         }
-    } else if (gameState === "game") {
-        // Launch the tongue on click (if it's not launched yet)
+    }
+
+    // Click within the game
+    if (gameState === "game") {
         if (frog.tongue.state === "idle") {
             frog.tongue.state = "outbound";
             tongueLaunched = true;
