@@ -589,6 +589,30 @@ function checkTongueFlyOverlap() {
         resetFly();
         // Bring back the tongue
         frog.tongue.state = "inbound";
+
+        //Scoring logic
+        comboCount++;
+        missCount = 0;
+
+        if (comboCount <= 3) {
+            score += 1; // 1 point for combos before 3
+        } else {
+            score += 3; // 3 points for combos of 3 or more
+        }
+
+        // The score cannot be negative
+        score = max(score, 0);
+    } else {
+        // If the tongue comes back without eating, reset combo
+        if (frog.tongue.state === "idle" && frog.tongue.y >= height) {
+            missCount++;
+            if (missCount >= 3) {
+                score -= 5; //Minus 5 points for missing 3 times in a row
+                missCount = 0;
+                comboCount = 0;
+                score = max(score, 0);
+            }
+        }
     }
 }
 
