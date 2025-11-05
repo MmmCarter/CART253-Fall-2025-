@@ -11,7 +11,7 @@ let gameState = "title"; // title, instructions, game
 let score = 0; // Current score
 let comboCount = 0; // Count of hits in a row
 let missCount = 0; // Count of misses
-let scoreBarmaxWidth = 200; // Maximum width of the score bar
+let scoreBarmaxWidth = 120; // Maximum width of the score bar
 let tongueLaunched = false; //Make sure that a single missile launch is only counted as a hit or a miss once.
 
 // Winning condition
@@ -475,7 +475,7 @@ function drawScoreBar() {
     rect(20, 40, scoreBarmaxWidth, 20, 5);
 
     // Dynamic bar length
-    let barWidth = map(score, 0, 100, 0, scoreBarmaxWidth, true);
+    let barWidth = map(score, 0, 30, 0, scoreBarmaxWidth, true);
     fill(50, 205, 50);
     rect(20, 40, barWidth, 20, 5);
 
