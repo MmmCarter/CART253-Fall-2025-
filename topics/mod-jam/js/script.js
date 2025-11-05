@@ -1,5 +1,20 @@
 /**
- * Frogfrogfrog
+ * Frogfrogfrog Remastered Edition
+ * Haolei Ma
+ * 
+ * This is a revised version game based on a FrogFrogFrog game template.
+ * 
+ * The Remastered Edition now features a title screen and game instructions, along with enhanced visuals and details for various game models and elements.
+ * 
+ * In addition, the game has added numerous gameplay mechanics, which aim to improve player engagement and overall experience (Check instructions for details).
+ * 
+ * Controls:
+ * - Move the frog horizontally by moving your mouse.
+ * - Click the mouse to launch the tongue.
+ * 
+ * Uses:
+ * p5.js
+ * https://p5js.org
  */
 
 "use strict";
