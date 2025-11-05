@@ -12,6 +12,7 @@ let score = 0; // Current score
 let comboCount = 0; // Count of hits in a row
 let missCount = 0; // Count of misses
 let scoreBarmaxWidth = 200; // Maximum width of the score bar
+let tongueLaunched = false; //Make sure that a single missile launch is only counted as a hit or a miss once.
 
 // Our frog
 const frog = {
@@ -463,7 +464,7 @@ function drawScoreBar() {
     // Combo text
     if (comboCount >= 3) {
         fill(255, 215, 0);
-        text("COMBO x" + comboCount, 20, 70);
+        text("COMBO x" + comboCount, 20, 60);
     }
 
     pop();
@@ -522,7 +523,19 @@ function moveTongue() {
     frog.tongue.x = frog.body.x;
     // If the tongue is idle, it doesn't do anything
     if (frog.tongue.state === "idle") {
-        // Do nothing
+        if (tongueLaunched) {
+            // Launch is over and miss the hit
+            missCount++;
+            comboCount = 0;
+            tongueLaunched = false;
+
+            if (missCount >= 3) {
+                score -= 5;
+                missCount = 0
+                score = Math.max(score, 0);
+            }
+        }
+        // nothing else when idle
     }
     // If the tongue is outbound, it moves up
     else if (frog.tongue.state === "outbound") {
@@ -600,19 +613,11 @@ function checkTongueFlyOverlap() {
             score += 3; // 3 points for combos of 3 or more
         }
 
+        // Reset tongue launch status
+        tongueLaunched = false;
+
         // The score cannot be negative
-        score = max(score, 0);
-    } else {
-        // If the tongue comes back without eating, reset combo
-        if (frog.tongue.state === "idle" && frog.tongue.y >= height) {
-            missCount++;
-            if (missCount >= 3) {
-                score -= 5; //Minus 5 points for missing 3 times in a row
-                missCount = 0;
-                comboCount = 0;
-                score = max(score, 0);
-            }
-        }
+        score = Math.max(score, 0);
     }
 }
 
@@ -625,6 +630,11 @@ function mousePressed() {
         for (let button of buttons) {
             if (button.state === gameState && isMouseOverButton(button)) {
                 if (button.text === "Start") {
+                    score = 0;
+                    comboCount = 0;
+                    missCount = 0;
+                    tongueLaunched = false;
+
                     gameState = "game";
                 } else if (button.text === "Instructions") {
                     gameState = "instructions";
@@ -638,6 +648,7 @@ function mousePressed() {
         // Launch the tongue on click (if it's not launched yet)
         if (frog.tongue.state === "idle") {
             frog.tongue.state = "outbound";
+            tongueLaunched = true;
         }
     }
 }
