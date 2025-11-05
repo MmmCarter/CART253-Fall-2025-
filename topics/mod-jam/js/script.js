@@ -4,6 +4,16 @@
 
 "use strict";
 
+// Sounds
+let slurpSound;
+let laughSound;
+
+function preload() {
+    soundFormats('mp3', 'wav');
+    slurpSound = loadSound('assets/sounds/slurp.mp3');
+    laughSound = loadSound('assets/sounds/laugh.wav');
+}
+
 // Game states
 let gameState = "title"; // title, instructions, game
 
@@ -597,6 +607,11 @@ function moveTongue() {
             comboCount = 0;
             tongueLaunched = false;
 
+            // Play laugh sound if missed
+            if (laughSound && !laughSound.isPlaying()) {
+                laughSound.play();
+            }
+
             if (missCount >= 3) {
                 score -= 5;
                 missCount = 0
@@ -683,6 +698,11 @@ function checkTongueFlyOverlap() {
     // Check if it's an overlap
     const eaten = (d < frog.tongue.size / 2 + fly.size / 2);
     if (eaten) {
+        // Play slurp sound
+        if (slurpSound && !slurpSound.isPlaying()) {
+            slurpSound.play();
+        }
+
         // Reset the fly
         resetFly();
         // Bring back the tongue
