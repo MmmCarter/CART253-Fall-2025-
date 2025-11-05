@@ -439,16 +439,16 @@ function drawInstructionsContent() {
     fill(255);
     let instructions = [
         "Game Objective:",
-        "Use the frog's tongue to catch as many flies as possible!",
+        "·Catch flies to get 30 points for winning.",
         "",
         "Controls:",
-        "Move the frog horizontally by moving your mouse.",
-        "Click the mouse to launch the tongue.",
+        "·Move the frog horizontally by moving your mouse.",
+        "·Click the mouse to launch the tongue.",
         "",
         "Game Tips:",
-        "Predict the flight path of the flies.",
-        "Launch the tongue when the flies are approaching.",
-        "Continuously catch to obtain a higher score."
+        "·Catch 1 fly = 1 point. Catch 3+ flies in a row = 3 points each.",
+        "·Miss 2 hits = -5 points.",
+        "·If you miss 3 times in a row, God of frog will help you."
     ];
 
     let startY = 100;
