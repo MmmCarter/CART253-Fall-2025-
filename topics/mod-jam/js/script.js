@@ -609,46 +609,58 @@ function moveFrog() {
  * Handles moving the tongue based on its state
  */
 function moveTongue() {
-    // Tongue matches the frog's x
+    // Tongue always tracks frog's x
     frog.tongue.x = frog.body.x;
-    // If the tongue is idle, it doesn't do anything
-    if (frog.tongue.state === "idle") {
-        if (tongueLaunched) {
-            // Launch is over and miss the hit
-            missCount++;
-            comboCount = 0;
-            tongueLaunched = false;
 
-            // Play laugh sound if missed
-            if (laughSound && !laughSound.isPlaying()) {
-                laughSound.play();
-            }
+    // If the tongue is outbound, move upward
+    if (frog.tongue.state === "outbound") {
+        frog.tongue.y -= frog.tongue.speed;
 
-            if (missCount >= 3) {
-                score -= 5;
-                missCount = 0
-                score = Math.max(score, 0);
-            }
-        }
-        // nothing else when idle
-    }
-    // If the tongue is outbound, it moves up
-    else if (frog.tongue.state === "outbound") {
-        frog.tongue.y += -frog.tongue.speed;
-        // The tongue bounces back if it hits the top
+        // When tongue reaches top, start returning
         if (frog.tongue.y <= 0) {
             frog.tongue.state = "inbound";
         }
     }
-    // If the tongue is inbound, it moves down
+
+    // If tongue is inbound, move back down
     else if (frog.tongue.state === "inbound") {
         frog.tongue.y += frog.tongue.speed;
-        // The tongue stops if it hits the bottom
-        if (frog.tongue.y >= height) {
+
+        // When tongue finishes returning
+        if (frog.tongue.y >= frog.tongue.yStart || frog.tongue.y >= height) {
             frog.tongue.state = "idle";
+
+            // Only trigger miss logic if launched but no hit
+            if (tongueLaunched) {
+                missCount++;
+                comboCount = 0;
+                tongueLaunched = false;
+
+                // play laugh sound
+                if (laughSound && !laughSound.isPlaying()) {
+                    laughSound.play();
+                }
+
+                // Miss 3 hits => extended tongue size
+                if (missCount >= 3) {
+                    frog.tongue.size = 200;
+                }
+
+                // Miss 2 hits => deduct 5 points
+                if (missCount % 2 === 0) {
+                    score -= 5;
+                    score = Math.max(score, 0);
+                }
+            }
         }
     }
+
+    // If idle and tongue was never launched, ensure tongue stays near mouth
+    else if (frog.tongue.state === "idle") {
+        frog.tongue.y = 480; // resting position
+    }
 }
+
 
 /**
  * Displays the tongue (tip and line connection) and the frog (body)
@@ -719,6 +731,9 @@ function checkTongueFlyOverlap() {
         resetFly();
         // Bring back the tongue
         frog.tongue.state = "inbound";
+
+        // Tongue returns to normal size after a hit
+        frog.tongue.size = 20;
 
         //Scoring logic
         comboCount++;
