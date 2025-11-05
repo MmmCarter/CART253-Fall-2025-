@@ -96,6 +96,7 @@ function drawGame() {
     moveTongue();
     drawFrog();
     checkTongueFlyOverlap();
+    drawScoreBar();
 }
 
 /**
@@ -434,6 +435,35 @@ function drawInstructionsContent() {
         }
 
         text(instructions[i], 100, y);
+    }
+
+    pop();
+}
+
+/**
+ * Draws the score bar
+ */
+function drawScoreBar() {
+    push();
+    textAlign(LEFT, CENTER);
+    textSize(18);
+    fill(255);
+    text("Score: " + score, 20, 25);
+
+    // Draw score bar background
+    noStroke();
+    fill(255, 255, 255, 80);
+    rect(20, 40, scoreBarmaxWidth, 20, 5);
+
+    // Dynamic bar length
+    let barWidth = map(score, 0, 100, 0, scoreBarmaxWidth, true);
+    fill(50, 205, 50);
+    rect(20, 40, barWidth, 20, 5);
+
+    // Combo text
+    if (comboCount >= 3) {
+        fill(255, 215, 0);
+        text("COMBO x" + comboCount, 20, 70);
     }
 
     pop();
