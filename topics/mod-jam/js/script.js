@@ -24,6 +24,9 @@ let missCount = 0; // Count of misses
 let scoreBarmaxWidth = 120; // Maximum width of the score bar
 let tongueLaunched = false; //Make sure that a single missile launch is only counted as a hit or a miss once.
 
+// Record the number of times the flies have been reset
+let flyResetCount = 0;
+
 // Winning condition
 const winningScore = 30;
 
@@ -580,6 +583,15 @@ function drawFly() {
  * Reset the fly to a random position and random direction
  */
 function resetFly() {
+    flyResetCount++; // Record reset
+
+    // It will become smaller every three times, then the rest return to normal.
+    if (flyResetCount % 4 === 0) {
+        fly.size = 10;
+    } else {
+        fly.size = 30;
+    }
+
     fly.x = random(50, width - 50);
     fly.y = random(50, height / 2);
     fly.speedX = random(-3, 3);
