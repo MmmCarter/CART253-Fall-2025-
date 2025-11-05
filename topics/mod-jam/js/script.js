@@ -647,13 +647,30 @@ function drawFrog() {
     noStroke();
     ellipse(frog.body.x, frog.body.y, frog.body.size);
 
-    // Draw the frog's eyes
+    // Eyes follow the fly
+    let eyeOffsetMax = 14; // Maximum offset for the eyes
+    let leftEyeBase = { x: frog.body.x - 55, y: frog.body.y - 55 };
+    let rightEyeBase = { x: frog.body.x + 55, y: frog.body.y - 55 };
+
+    //Each eye rotates according to its own direction and the direction of the fly.
+    let leftAngle = atan2(fly.y - leftEyeBase.y, fly.x - leftEyeBase.x);
+    let rightAngle = atan2(fly.y - rightEyeBase.y, fly.x - rightEyeBase.x);
+
+    // Calculate the offset of each eye
+    let leftEyeOffsetX = cos(leftAngle) * eyeOffsetMax;
+    let leftEyeOffsetY = sin(leftAngle) * eyeOffsetMax;
+    let rightEyeOffsetX = cos(rightAngle) * eyeOffsetMax;
+    let rightEyeOffsetY = sin(rightAngle) * eyeOffsetMax;
+
+    // Eye white
     fill(255);
-    ellipse(frog.body.x - 55, frog.body.y - 55, 25);
-    ellipse(frog.body.x + 55, frog.body.y - 55, 25);
+    ellipse(leftEyeBase.x, leftEyeBase.y, 25);
+    ellipse(rightEyeBase.x, rightEyeBase.y, 25);
+
+    // Pupils
     fill(0);
-    ellipse(frog.body.x - 55, frog.body.y - 55, 12);
-    ellipse(frog.body.x + 55, frog.body.y - 55, 12);
+    ellipse(leftEyeBase.x + leftEyeOffsetX * 0.6, leftEyeBase.y + leftEyeOffsetY * 0.6, 12);
+    ellipse(rightEyeBase.x + rightEyeOffsetX * 0.6, rightEyeBase.y + rightEyeOffsetY * 0.6, 12);
     pop();
 }
 
