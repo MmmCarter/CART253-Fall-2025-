@@ -7,6 +7,12 @@
 // Game states
 let gameState = "title"; // title, instructions, game
 
+//Scoring system
+let score = 0; // Current score
+let comboCount = 0; // Count of hits in a row
+let missCount = 0; // Count of misses
+let scoreBarmaxWidth = 200; // Maximum width of the score bar
+
 // Our frog
 const frog = {
     // The frog's body has a position and size
