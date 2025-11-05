@@ -37,12 +37,12 @@ const frog = {
 };
 
 // Our fly
-// Has a position, size, and speed of horizontal movement
 const fly = {
     x: 0,
     y: 200, // Will be random
-    size: 10,
-    speed: 3
+    size: 30,
+    speedX: 0,
+    speedY: 0
 };
 
 // Title screen elements
@@ -525,15 +525,27 @@ function resetGame() {
 }
 
 /**
- * Moves the fly according to its speed
- * Resets the fly if it gets all the way to the right
+ * Moves the fly randomly around the screen
  */
 function moveFly() {
-    // Move the fly
-    fly.x += fly.speed;
-    // Handle the fly going off the canvas
-    if (fly.x > width) {
-        resetFly();
+    if (random() < 0.05) {
+        fly.speedX += random(-1, 1);
+        fly.speedY += random(-1, 1);
+    }
+
+    fly.speedX = constrain(fly.speedX, -4, 4);
+    fly.speedY = constrain(fly.speedY, -4, 4);
+
+    fly.x += fly.speedX;
+    fly.y += fly.speedY;
+
+    if (fly.x < 0 || fly.x > width) {
+        fly.speedX *= -1;
+        fly.x = constrain(fly.x, 0, width);
+    }
+    if (fly.y < 0 || fly.y > height - 150) {
+        fly.speedY *= -1;
+        fly.y = constrain(fly.y, 0, height - 150);
     }
 }
 
@@ -555,11 +567,13 @@ function drawFly() {
 }
 
 /**
- * Resets the fly to the left with a random y
+ * Reset the fly to a random position and random direction
  */
 function resetFly() {
-    fly.x = 0;
-    fly.y = random(0, 300);
+    fly.x = random(50, width - 50);
+    fly.y = random(50, height / 2);
+    fly.speedX = random(-3, 3);
+    fly.speedY = random(-3, 3);
 }
 
 /**
