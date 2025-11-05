@@ -21,11 +21,12 @@ Haolei Ma
 
 > JavaScript libraries:
   - [p5.js](https;//p5js.org)
-> FrogFrogFrog-Main by Pippin Barr
-> Function Challenge exercise in class
-> Conditional Challenge exercise in class
-> Variables Challenge exercise in class
-> Events Challenge esercise in class
+> Other Attributions:
+  - FrogFrogFrog-Main by Pippin Barr.
+  - Function Challenge exercise in class.
+  - Conditional Challenge exercise in class.
+  - Variables Challenge exercise in class.
+  - Events Challenge esercise in class.
 
 
 
