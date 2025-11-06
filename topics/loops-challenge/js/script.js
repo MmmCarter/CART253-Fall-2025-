@@ -19,19 +19,27 @@ function setup() {
  * gradually lightening colour
  */
 function draw() {
-    background("pink");
+    background(255, 0, 0);
+
 
     let x = 0;
     let y = 0;
 
+    for (let i = 0; i <= 5; i++) {
+        stroke(100 - i * 5);
+        strokeWeight(i);
+        colorMode(HSB);
+
+    }
+
     while (x <= width) {
         line(x, 0, x, height);
-        x += 50;
+        x += 10;
     }
 
     while (y <= height) {
         line(0, y, width, y);
-        y += 50;
+        y += 15;
     }
 
 
