@@ -26,20 +26,22 @@ function draw() {
     let y = 0;
 
     for (let i = 0; i <= 5; i++) {
-        stroke(100 - i * 5);
-        strokeWeight(i);
-        colorMode(HSB);
-
     }
 
     while (x <= width) {
+        stroke(150);
+        strokeWeight(x / width);
+        colorMode(HSB);
         line(x, 0, x, height);
         x += 10;
     }
 
     while (y <= height) {
+        stroke(150);
+        strokeWeight(y / height);
+        colorMode(HSB);
         line(0, y, width, y);
-        y += 15;
+        y += 10;
     }
 
 
