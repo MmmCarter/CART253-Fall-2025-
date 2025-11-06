@@ -1,6 +1,6 @@
 /**
  * Lines
- * Pippin Barr
+ * Haolei Ma, Jason Lee
  * 
  * A series of lines across the canvas
  */
