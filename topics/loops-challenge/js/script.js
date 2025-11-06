@@ -21,12 +21,17 @@ function setup() {
 function draw() {
     background("pink");
 
-    let x = 2;
+    let x = 0;
     let y = 0;
 
     while (x <= width) {
         line(x, 0, x, height);
         x += 50;
+    }
+
+    while (y <= height) {
+        line(0, y, width, y);
+        y += 50;
     }
 
 
