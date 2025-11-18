@@ -14,4 +14,4 @@ This game is very well-designed! The title screen, backgrounds, and models are a
 >https://emilebedard.github.io/cart253/Projects/mod-jam/
 >https://github.com/EmileBedard/cart253/tree/main/Projects/mod-jam
 
-I 
+When I first start this game, I really like the method of starting the game by eating a fly in the title page is incredibly creative. The gameplay where the wood frog moves forward after eating flies and bugs also strikes me as quite fun, especially the one that looks like a bee or a moth - its moving track are brilliantly designed, lots of my attacks were rhythmically dodged. In addition, the educational section about the wood frog in the victory screen is also exceptionally wee-designed, now I've really gained some understanding about the wood frog! Good work!
