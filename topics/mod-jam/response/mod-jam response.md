@@ -8,7 +8,7 @@ This is a very interesting game. The title page is simple and clear, I immediate
 >https://cameliapitsilis-lgtm.github.io/cart253/mod-jam/
 >https://github.com/cameliapitsilis-lgtm/cart253/tree/main/mod-jam
 
-U
+This game is very well-designed! The title screen, backgrounds, and models are all outstanding (I'm really partial to this pixel art style). But even in pixel art, you can still found those exquisitely crafted details such as the "golden truthful prophecies". The game consists of two mini-games, each with its own unique style, and the instructions are very clear as well, when I was playing with it, I really gives me the feel about playing Gameboys when I was a kid. If BGM and some game sound effects could be added, this would absolutely be a legend!
 
 ## Émile Bédard
 >https://emilebedard.github.io/cart253/Projects/mod-jam/
