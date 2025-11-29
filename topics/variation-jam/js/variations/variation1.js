@@ -5,5 +5,17 @@
  */
 
 let delayBuffer = [];
+let delayAmount = 30; //frames
 let frogX = 300;
 let frogY = 300;
+
+function delaySetup() {
+    delayBuffer = [];
+}
+
+function delayDraw() {
+    background(30, 50, 80);
+}
+
+function delayKeyPressed(event) { }
+function delayMousePressed() { }

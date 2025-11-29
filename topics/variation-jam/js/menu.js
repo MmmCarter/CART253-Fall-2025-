@@ -1,7 +1,6 @@
 /**
  * MENU.JS
  * This menu file contains the code to run *only* the menu part of the program.
- * Note how it has its own draw, menuDraw(), and its own keyPressed, menuKeyPressed().
  * This keeps the stuff the menu needs to do *separate* from the rest of the program.
  */
 
