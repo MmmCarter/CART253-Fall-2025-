@@ -5,7 +5,7 @@
  */
 
 const menuText = `
-(1) Variation 1
+(1) Delay Frog
 (2) Variation 2
 (3) Variation 3 `
 
@@ -28,17 +28,17 @@ function menuDraw() {
 function menuKeyPressed(event) {
     switch (event.key.toUpperCase()) {
         case "1":
-            state = "variation1";
-            redSetup();
+            state = "delay";
+            delaySetup();
             break;
 
         case "2":
-            state = "variation2";
+            state = "2";
             greenSetup();
             break;
 
         case "3":
-            state = "variation3";
+            state = "3";
             blueSetup();
             break;
     }

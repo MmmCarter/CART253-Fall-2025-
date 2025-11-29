@@ -23,13 +23,13 @@ function draw() {
         case "menu":
             menuDraw();
             break;
-        case "variation1":
-            redDraw();
+        case "delay":
+            delayDraw();
             break
-        case "variation2":
+        case "2":
             greenDraw();
             break;
-        case "variation3":
+        case "3":
             blueDraw();
             break;
     }
@@ -44,13 +44,13 @@ function keyPressed(event) {
         case "menu":
             menuKeyPressed(event);
             break;
-        case "variation1":
-            redKeyPressed(event);
+        case "delay":
+            delayKeyPressed(event);
             break
-        case "variation2":
+        case "2":
             greenKeyPressed(event);
             break;
-        case "variation3":
+        case "3":
             blueKeyPressed(event);
             break;
     }
@@ -65,13 +65,13 @@ function mousePressed() {
         case "menu":
             menuMousePressed();
             break;
-        case "variation1":
-            redMousePressed();
+        case "delay":
+            delayMousePressed();
             break
-        case "variation2":
+        case "2":
             greenMousePressed();
             break;
-        case "variation3":
+        case "3":
             blueMousePressed();
             break;
     }
