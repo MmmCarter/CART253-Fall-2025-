@@ -1,24 +1,78 @@
 /**
- * Title of Project
- * Author Name
+ * FrogFrogFrog Variations
+ * Haolei Ma
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
  */
 
 "use strict";
 
+let state = "menu";
+
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Create the canvas
 */
 function setup() {
-
+    createCanvas(600, 600);
 }
 
-
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Display the menu or the current variation
 */
 function draw() {
+    switch (state) {
+        case "menu":
+            menuDraw();
+            break;
+        case "variation1":
+            redDraw();
+            break
+        case "variation2":
+            greenDraw();
+            break;
+        case "variation3":
+            blueDraw();
+            break;
+    }
+}
 
+/**
+ * Listen for keypressed and call the function for it in the
+ * current state
+ */
+function keyPressed(event) {
+    switch (state) {
+        case "menu":
+            menuKeyPressed(event);
+            break;
+        case "variation1":
+            redKeyPressed(event);
+            break
+        case "variation2":
+            greenKeyPressed(event);
+            break;
+        case "variation3":
+            blueKeyPressed(event);
+            break;
+    }
+}
+
+/**
+ * Listen for mouse pressed and call the function for it in the
+ * current state
+ */
+function mousePressed() {
+    switch (state) {
+        case "menu":
+            menuMousePressed();
+            break;
+        case "variation1":
+            redMousePressed();
+            break
+        case "variation2":
+            greenMousePressed();
+            break;
+        case "variation3":
+            blueMousePressed();
+            break;
+    }
 }
