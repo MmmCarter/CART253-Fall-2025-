@@ -27,18 +27,19 @@ function delayDraw() {
     }
 
     // draw frog at delayed position
-    drawFrog(frogX, frogY);
+    drawDelayFrog(frogX, frogY);
 }
 
+function delayKeyPressed() { }
+function delayMousePressed() { }
+
 // draw the frog
-function drawFrog(x, y, color = [0, 255, 0]) {
+function drawDelayFrog(x, y) {
     push();
     translate(x, y);
-    fill(color);
+    fill(0, 230, 120);
     ellipse(0, 0, 40, 30);
     ellipse(-10, -10, 15, 20);
     ellipse(10, -10, 10, 20);
+    pop();
 }
-
-function delayKeyPressed(event) { }
-function delayMousePressed() { }

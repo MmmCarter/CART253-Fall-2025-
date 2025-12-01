@@ -25,8 +25,8 @@ function menuDraw() {
 /**
  * Listen to the keyboard
  */
-function menuKeyPressed(event) {
-    switch (event.key.toUpperCase()) {
+function menuKeyPressed() {
+    switch (key.toUpperCase()) {
         case "1":
             state = "delay";
             delaySetup();
@@ -38,7 +38,7 @@ function menuKeyPressed(event) {
             break;
 
         case "3":
-            state = "3";
+            state = "anticontrol";
             blueSetup();
             break;
     }

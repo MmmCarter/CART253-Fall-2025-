@@ -7,7 +7,7 @@
 let mic;
 let splitX = 300;
 let splitY = 300;
-let frogColor = [100, 200, 100];
+let splitFrogColor = [100, 200, 100];
 
 function splitSetup() {
     mic = new p5.AudioIn();
@@ -22,18 +22,26 @@ function splitDraw() {
 
     // Y follows mic volume
     let vol = mic.getLevel();
-    spiltY = map(vol, 0, 0.2, height * 0.7, height * 0.3);
+    splitY = map(vol, 0, 0.2, height * 0.7, height * 0.3);
 
-    // Color follows key (optional)
-    fill(frogColor);
-
-    drawFrog(splitX, splitY, frogColor);
+    drawSplitFrog(splitX, splitY, splitFrogColor);
 }
 
-function splitKeyPressed(event) {
+function splitKeyPressed() {
     if (event.key === "r") frogColor = [255, 80, 80];
     if (event.key === "g") frogColor = [80, 255, 80];
     if (event.key === "b") frogColor = [80, 80, 255];
 }
 
 function splitMousePressed() { }
+
+// draw the frog
+function drawSplitFrog(x, y, col) {
+    push();
+    translate(x, y);
+    fill(col);
+    ellipse(0, 0, 40, 30);
+    ellipse(-10, -10, 15, 20);
+    ellipse(10, -10, 10, 20);
+    pop();
+}

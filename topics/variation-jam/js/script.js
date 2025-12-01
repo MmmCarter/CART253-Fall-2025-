@@ -34,8 +34,8 @@ function draw() {
         case "split":
             splitDraw();
             break;
-        case "3":
-            blueDraw();
+        case "anticontrol":
+            antiDraw();
             break;
     }
 }
@@ -44,19 +44,19 @@ function draw() {
  * Listen for keypressed and call the function for it in the
  * current state
  */
-function keyPressed(event) {
+function keyPressed() {
     switch (state) {
         case "menu":
-            menuKeyPressed(event);
+            menuKeyPressed();
             break;
         case "delay":
-            delayKeyPressed(event);
+            delayKeyPressed();
             break
         case "split":
-            splitKeyPressed(event);
+            splitKeyPressed();
             break;
-        case "3":
-            blueKeyPressed(event);
+        case "anticontrol":
+            antiKeyPressed();
             break;
     }
 }
@@ -76,8 +76,8 @@ function mousePressed() {
         case "split":
             splitMousePressed();
             break;
-        case "3":
-            blueMousePressed();
+        case "anticontrol":
+            antiMousePressed();
             break;
     }
 }
