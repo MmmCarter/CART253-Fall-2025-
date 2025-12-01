@@ -6,7 +6,7 @@
 
 const menuText = `
 (1) Delay Frog
-(2) Variation 2
+(2) Split-Perception Frog
 (3) Variation 3 `
 
 /**
@@ -33,7 +33,7 @@ function menuKeyPressed(event) {
             break;
 
         case "2":
-            state = "2";
+            state = "split";
             greenSetup();
             break;
 

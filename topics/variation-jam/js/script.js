@@ -13,6 +13,11 @@ let state = "menu";
 */
 function setup() {
     createCanvas(600, 600);
+
+    // if split perception mode needs microphone
+    if (typeof getAudioContext !== "undefined") {
+        userStartAudio();
+    }
 }
 
 /**
@@ -26,8 +31,8 @@ function draw() {
         case "delay":
             delayDraw();
             break
-        case "2":
-            greenDraw();
+        case "split":
+            splitDraw();
             break;
         case "3":
             blueDraw();
@@ -47,8 +52,8 @@ function keyPressed(event) {
         case "delay":
             delayKeyPressed(event);
             break
-        case "2":
-            greenKeyPressed(event);
+        case "split":
+            splitKeyPressed(event);
             break;
         case "3":
             blueKeyPressed(event);
@@ -68,8 +73,8 @@ function mousePressed() {
         case "delay":
             delayMousePressed();
             break
-        case "2":
-            greenMousePressed();
+        case "split":
+            splitMousePressed();
             break;
         case "3":
             blueMousePressed();
