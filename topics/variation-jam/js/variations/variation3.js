@@ -9,7 +9,12 @@ let antiY = 300;
 let vx = 0;
 let vy = 0;
 
-function antiSetup() { }
+function antiSetup() {
+    antiX = 300;
+    antiY = 300;
+    vx = 0;
+    vy = 0;
+}
 
 function antiDraw() {
     background(60, 20, 20);
@@ -19,7 +24,7 @@ function antiDraw() {
     let dy = antiY - mouseY;
 
     let distSq = dx * dx + dy * dy;
-    let force = 5 / max(distSq, 30); // stronger when mouse is close
+    let force = 5 / max(distSq, 40); // stronger when mouse is close
 
     vx += dx * force;
     vy += dy * force;

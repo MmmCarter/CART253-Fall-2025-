@@ -4,13 +4,13 @@
  * This keeps the stuff the menu needs to do *separate* from the rest of the program.
  */
 
-let delayBuffer = [];
+let delayBuffer = []; //array to hold past positions
 let delayAmount = 30; //frames
 let frogX = 300;
 let frogY = 300;
 
 function delaySetup() {
-    delayBuffer = [];
+    delayBuffer = []; //reset buffer
 }
 
 function delayDraw() {
@@ -19,7 +19,7 @@ function delayDraw() {
     // push current mouse into buffer
     delayBuffer.push({ x: mouseX, y: mouseY });
 
-    //limit buffer
+    //when buffer is long enough, update the frog's position using the oldest position
     if (delayBuffer.length > delayAmount) {
         let oldPos = delayBuffer.shift();
         frogX = oldPos.x;
@@ -40,6 +40,6 @@ function drawDelayFrog(x, y) {
     fill(0, 230, 120);
     ellipse(0, 0, 40, 30);
     ellipse(-10, -10, 15, 20);
-    ellipse(10, -10, 10, 20);
+    ellipse(10, -10, 15, 20);
     pop();
 }

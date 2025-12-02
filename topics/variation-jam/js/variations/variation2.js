@@ -11,7 +11,7 @@ let splitFrogColor = [100, 200, 100];
 
 function splitSetup() {
     mic = new p5.AudioIn();
-    mic.start();
+    mic.start(); // start the microphone
 }
 
 function splitDraw() {
@@ -28,9 +28,9 @@ function splitDraw() {
 }
 
 function splitKeyPressed() {
-    if (event.key === "r") frogColor = [255, 80, 80];
-    if (event.key === "g") frogColor = [80, 255, 80];
-    if (event.key === "b") frogColor = [80, 80, 255];
+    if (key === "r" || key === "R") frogColor = [255, 80, 80];
+    if (key === "g" || key === "G") frogColor = [80, 255, 80];
+    if (key === "b" || key === "B") frogColor = [80, 80, 255];
 }
 
 function splitMousePressed() { }

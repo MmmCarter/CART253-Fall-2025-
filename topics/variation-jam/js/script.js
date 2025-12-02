@@ -13,11 +13,6 @@ let state = "menu";
 */
 function setup() {
     createCanvas(600, 600);
-
-    // if split perception mode needs microphone
-    if (typeof getAudioContext !== "undefined") {
-        userStartAudio();
-    }
 }
 
 /**
