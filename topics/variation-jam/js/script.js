@@ -45,6 +45,13 @@ function draw() {
  * current state
  */
 function keyPressed() {
+
+    //Return to the main menu at any time
+    if (keyCode === ESCAPE) {
+        state = "menu";
+        return;
+    }
+
     switch (state) {
         case "menu":
             menuKeyPressed();

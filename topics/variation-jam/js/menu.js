@@ -7,7 +7,8 @@
 const menuText = `
 (1) Delay Frog
 (2) Split-Perception Frog
-(3) Variation 3 `
+(3) Variation 3
+(ESC) Return to Menu`
 
 /**
  * Display the main menu
@@ -16,7 +17,7 @@ function menuDraw() {
     background(0);
     push();
     fill(255);
-    textSize(32);
+    textSize(28);
     textAlign(CENTER, CENTER);
     text(menuText, width / 2, height / 2);
     pop();
