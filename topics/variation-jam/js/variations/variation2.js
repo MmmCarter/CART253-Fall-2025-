@@ -11,7 +11,10 @@ let splitFrogColor = [100, 200, 100];
 
 function splitSetup() {
     mic = new p5.AudioIn();
-    mic.start(); // start the microphone
+
+    userStartAudio().then(() => {
+        mic.start();
+    });
 }
 
 function splitDraw() {
@@ -21,8 +24,10 @@ function splitDraw() {
     splitX = mouseX;
 
     // Y follows mic volume
-    let vol = mic.getLevel();
-    splitY = map(vol, 0, 0.2, height * 0.7, height * 0.3);
+    if (mic) {
+        let vol = mic.getLevel();
+        splitY = map(vol, 0, 0.2, height * 0.7, height * 0.3);
+    }
 
     drawSplitFrog(splitX, splitY, splitFrogColor);
 }
@@ -42,6 +47,6 @@ function drawSplitFrog(x, y, col) {
     fill(col);
     ellipse(0, 0, 40, 30);
     ellipse(-10, -10, 15, 20);
-    ellipse(10, -10, 10, 20);
+    ellipse(10, -10, 15, 20);
     pop();
 }
