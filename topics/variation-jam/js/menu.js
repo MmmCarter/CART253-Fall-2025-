@@ -7,7 +7,7 @@
 const menuText = `
 (1) Delay Frog
 (2) Split-Perception Frog
-(3) Variation 3
+(3) Anti-Control Frog
 (ESC) Return to Menu`
 
 /**
@@ -35,12 +35,12 @@ function menuKeyPressed() {
 
         case "2":
             state = "split";
-            greenSetup();
+            splitSetup();
             break;
 
         case "3":
             state = "anticontrol";
-            blueSetup();
+            antiSetup();
             break;
     }
 }
