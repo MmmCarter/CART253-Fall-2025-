@@ -33,9 +33,9 @@ function splitDraw() {
 }
 
 function splitKeyPressed() {
-    if (key === "r" || key === "R") frogColor = [255, 80, 80];
-    if (key === "g" || key === "G") frogColor = [80, 255, 80];
-    if (key === "b" || key === "B") frogColor = [80, 80, 255];
+    if (key === "r" || key === "R") splitFrogColor = [255, 80, 80];
+    if (key === "g" || key === "G") splitFrogColor = [80, 255, 80];
+    if (key === "b" || key === "B") splitFrogColor = [80, 80, 255];
 }
 
 function splitMousePressed() { }
