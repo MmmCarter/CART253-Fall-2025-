@@ -10,14 +10,37 @@ const menuText = `
 (3) Anti-Control Frog
 (ESC) Return to Menu`
 
+let glowPulse = 0;
+
 /**
  * Display the main menu
  */
 function menuDraw() {
-    background(0);
+    background(15, 15, 20);
+
+    //glowing effect
+    glowPulse += 0.05;
+
+    //title
+    push();
+    fill(180 + sin(glowPulse) * 50);//subtle glow
+    textSize(50);
+    textAlign(CENTER, CENTER);
+    text("FROG VARIATIONS", width / 2, 120);
+    pop();
+
+    //pixel border frame
     push();
     fill(255);
-    textSize(28);
+    strokeWeight(6);
+    noFill();
+    rect(width / 2 - 220, height / 2 - 140, 440, 280);
+    pop();
+
+    //menu text insdie frame
+    push();
+    fill(240);
+    textSize(24);
     textAlign(CENTER, CENTER);
     text(menuText, width / 2, height / 2);
     pop();
