@@ -21,6 +21,7 @@ let hoverIndex = -1;
  */
 function menuDraw() {
     background(8, 8, 12);
+    noStroke();
 
     //glowing effect
     glowPulse += 0.05;
