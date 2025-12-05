@@ -24,14 +24,19 @@ Haolei Ma
 - Keyboard typing affects frog color based on typing rhythm.
 
 3. Anti-Control Frog
-- Core Significance: Exploring the possibility of overturning the assumption that “users hold absolute dominance” in AI interfaces, enabling systems to become “semi-autonomous entities.
+- Core Significance: Exploring the possibility of overturning the assumption that “users hold absolute dominance” in AI interfaces, enabling systems to become “semi-autonomous entities".
 - Frog actively resists mouse control: it moves away from the cursor.
 - Generates floating protest text (e.g., “RESIST”, “NO TRACKING”) for a political/experimental aesthetic.
 - Screen shakes slightly when the mouse is too close, enhancing the sense of resistance.
 
-
-
-> The project is meant to give the user a sense of what it would be the mayor of a town of clowns, eventually getting the sense that clowns are not taking their civic duties seriously.
+> How to Use
+Menu Navigation:
+Hover over options and click, or press 1, 2, or 3 to select a variation.
+Press ESC at any time to return to the menu.
+Variation Controls:
+Delay Frog: Move the mouse to see the real and delayed frogs.
+Split-Perception Frog: Move the mouse horizontally, speak or make noise for vertical movement, type keys to affect frog color.
+Anti-Control Frog: Move the mouse near the frog to see it evade, watch floating protest text, enjoy the subtle screen shake.
 
 ## Screenshot(s)
 
