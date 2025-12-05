@@ -30,13 +30,13 @@ Haolei Ma
 - Screen shakes slightly when the mouse is too close, enhancing the sense of resistance.
 
 > How to Use
-Menu Navigation:
-Hover over options and click, or press 1, 2, or 3 to select a variation.
-Press ESC at any time to return to the menu.
-Variation Controls:
-Delay Frog: Move the mouse to see the real and delayed frogs.
-Split-Perception Frog: Move the mouse horizontally, speak or make noise for vertical movement, type keys to affect frog color.
-Anti-Control Frog: Move the mouse near the frog to see it evade, watch floating protest text, enjoy the subtle screen shake.
+> Menu Navigation:
+- Hover over options and click, or press 1, 2, or 3 to select a variation.
+- Press ESC at any time to return to the menu.
+> Variation Controls:
+- Delay Frog: Move the mouse to see the real and delayed frogs.
+- Split-Perception Frog: Move the mouse horizontally, speak or make noise for vertical movement, type keys to affect frog color.
+- Anti-Control Frog: Move the mouse near the frog to see it evade, watch floating protest text, enjoy the subtle screen shake.
 
 ## Screenshot(s)
 
