@@ -11,20 +11,20 @@ Haolei Ma
 > The project contains three interactive frog experiments:
 
 1. Delay Frog
-Core Significance: Exploring How Delays in Human-Computer Interaction (HCI) affect Users' Sense of Control.
+- Core Significance: Exploring How Delays in Human-Computer Interaction (HCI) affect Users' Sense of Control.
 - The real frog immediately follows the mouse.
 - A delayed frog slowly chases the real frog.
 - The delayed frog leaves a smooth trail behind it, showing motion history.
 
 2. Split-Perception Frog
-Core Significance: Unconventional HCI experiments: Let control no longer be uniform, but rather a collage of inputs from multiple senses.
+- Core Significance: Unconventional HCI experiments: Let control no longer be uniform, but rather a collage of inputs from multiple senses.
 - Horizontal movement follows the mouse.
 - Vertical movement responds to microphone input (audio level).
 - Multi-layer afterimages and audio-reactive eye movement visualize sound and perception.
 - Keyboard typing affects frog color based on typing rhythm.
 
 3. Anti-Control Frog
-Core Significance: Exploring the possibility of overturning the assumption that “users hold absolute dominance” in AI interfaces, enabling systems to become “semi-autonomous entities.
+- Core Significance: Exploring the possibility of overturning the assumption that “users hold absolute dominance” in AI interfaces, enabling systems to become “semi-autonomous entities.
 - Frog actively resists mouse control: it moves away from the cursor.
 - Generates floating protest text (e.g., “RESIST”, “NO TRACKING”) for a political/experimental aesthetic.
 - Screen shakes slightly when the mouse is too close, enhancing the sense of resistance.
