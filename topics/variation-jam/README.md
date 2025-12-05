@@ -1,31 +1,59 @@
-# TITLE OF PROJECT
+# Frog Variations
 
-AUTHOR NAME
+Haolei Ma
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://mmmcarter.github.io/CART253-Fall-2025-/topics/variation-jam/)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+> Frog Variations is a creative interactive project exploring three experimental "frog" variations. Each variation demonstrates unique visual and interactive behaviors, inspired by perception, delay, and anti-control dynamics. 
 
-> *The Mayor of Clown Town* is a simulator experience that allows the user to control a small town populated entirely by clowns.
+> The project contains three interactive frog experiments:
 
-> The experience is controlled via the mouse, with left click selecting a clown and bringing up a menu of options such as "slip of banana peel" or "get into impossible capacious clown-car."
+1. Delay Frog
+Core Significance: Exploring How Delays in Human-Computer Interaction (HCI) affect Users' Sense of Control.
+- The real frog immediately follows the mouse.
+- A delayed frog slowly chases the real frog.
+- The delayed frog leaves a smooth trail behind it, showing motion history.
+
+2. Split-Perception Frog
+Core Significance: Unconventional HCI experiments: Let control no longer be uniform, but rather a collage of inputs from multiple senses.
+- Horizontal movement follows the mouse.
+- Vertical movement responds to microphone input (audio level).
+- Multi-layer afterimages and audio-reactive eye movement visualize sound and perception.
+- Keyboard typing affects frog color based on typing rhythm.
+
+3. Anti-Control Frog
+Core Significance: Exploring the possibility of overturning the assumption that “users hold absolute dominance” in AI interfaces, enabling systems to become “semi-autonomous entities.
+- Frog actively resists mouse control: it moves away from the cursor.
+- Generates floating protest text (e.g., “RESIST”, “NO TRACKING”) for a political/experimental aesthetic.
+- Screen shakes slightly when the mouse is too close, enhancing the sense of resistance.
+
+
 
 > The project is meant to give the user a sense of what it would be the mayor of a town of clowns, eventually getting the sense that clowns are not taking their civic duties seriously.
 
 ## Screenshot(s)
 
-This bit should have some images of the program running so that the reader has a sense of what it looks like. For example:
-
-> ![Image of a clown face](./assets/images/clown.png)
+> ![Menu Page](./assets/images/title.png)
+> ![Variation 1](./assets/images/variation1.png)
+> ![Variation 2](./assets/images/variation2.png)
+> ![Variation 3](./assets/images/variation3.png)
 
 ## Attribution
 
+> JavaScript libraries:
+  - [p5.js](https;//p5js.org)
+> Other Attributions:
+  - FrogFrogFrog-Main by Pippin Barr.
+  - Variation-menu template by pippin Barr
+  - Arrays Challenge exercise in class.
+  - Conditional Challenge exercise in class.
+  - Variables Challenge exercise in class.
+  - Events Challenge exercise in class.
+  - Function Challenge exercise in class.
 
 
 ## License
-
-This bit should include the license you want to apply to your work. For example:
 
 > This project is licensed under a Creative Commons Attribution ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.en)) license with the exception of libraries and other components with their own licenses.
