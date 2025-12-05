@@ -2,6 +2,22 @@
  * FrogFrogFrog Variations
  * Haolei Ma
  * 
+ * This is a creative interactive project exploring three experimental "frog" variations. Each variation demonstrates unique visual and interactive behaviors, inspired by perception, delay, and anti-control dynamics. 
+ * 
+ * Menu Navigation:
+ * Hover over options and click, or press 1, 2, or 3 to select a variation.
+ * Press ESC at any time to return to the menu.
+ * 
+ * Variation Controls:
+ * Delay Frog: Move the mouse to see the real and delayed frogs.
+ * 
+ * Split-Perception Frog: Move the mouse horizontally, speak or make noise for vertical movement, type keys to affect frog color.
+ * 
+ * Anti-Control Frog: Move the mouse near the frog to see it evade, watch floating protest text, enjoy the subtle screen shake.
+ * 
+ * Uses:
+ * p5.js
+ * https://p5js.org
  */
 
 "use strict";
